@@ -1,0 +1,66 @@
+/* Index Page */
+
+.photographer_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5.62em;
+  margin-top: 2em;
+}
+
+@media (max-width: 1080px) {
+  .photographer_section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.photographer_section article {
+  display: flex;
+  flex-direction: column;
+}
+
+.photographer_section article div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.photographer_section article section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.photographer_section article h2 {
+  color: #d3573c;
+  font-size: 2.25em;
+  font-weight: 500;
+  margin: 0.625em 0 0 0;
+}
+
+.photographer_section article h3 {
+  color: #901c1c;
+  font-size: 0.85em;
+  margin: 0.125em;
+}
+
+.photographer_section article h4 {
+  color: #000;
+  font-size: 0.75em;
+  font-weight: 600;
+  margin: 0.125em;
+}
+
+.photographer_section article h5 {
+  color: #525252;
+  font-size: 0.7em;
+  font-weight: 100;
+  margin: 0.125em;
+}
+
+.photographer_section article img {
+  height: 12.5em;
+  width: 12.5em;
+  border-radius: 50%;
+  box-shadow: 0.25em 0.25em 0.5em #c4c4c4;
+  object-fit: cover;
+}

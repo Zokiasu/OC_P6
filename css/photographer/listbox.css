@@ -1,0 +1,72 @@
+#listbox {
+  display: flex;
+  padding: 0.8em 0 0 5%;
+}
+
+#listbox-label {
+  font-weight: 800;
+  font-size: 1.25em;
+  display: flex;
+  align-items: center;
+  padding-right: 0.6em;
+}
+
+.listbox-custom {
+  color: white;
+  font-size: 1.25em;
+  font-weight: 800;
+}
+
+.listbox-custom select {
+  display: none;
+}
+
+.listbox-custom-new {
+  display: flex;
+  align-items: center;
+  background-color: #901c1c;
+  border-radius: 0.3em;
+  height: 3em;
+  width: 8em;
+  cursor: pointer;
+  padding-left: 0.6em;
+  position: relative;
+}
+
+.listbox-custom-new::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f078";
+  position: absolute;
+  right: 0.5em;
+}
+
+.listbox-custom-new.active::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f077";
+}
+
+.select-items {
+  background-color: #901c1c;
+  border-radius: 0.3em;
+  position: absolute;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.select-items div {
+  display: flex;
+  align-items: center;
+  min-height: 3em;
+  width: 8em;
+  border-top: solid #fafafa;
+  padding-left: 1.5em;
+  cursor: pointer;
+}
+
+.select-hide {
+  display: none;
+}
+
+.active {
+  display: none;
+}

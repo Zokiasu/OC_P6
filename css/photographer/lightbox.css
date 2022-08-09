@@ -1,0 +1,99 @@
+#lightbox {
+  color: #901c1c;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 3;
+}
+
+#lightbox-container {
+  background-color: white;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transform: translateX(0%);
+}
+
+#lightbox-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.lightbox-modal-media {
+  max-height: 40em;
+  max-width: 100%;
+  border-radius: 0.3em;
+  object-fit: contain;    
+}
+
+#lightbox-icon-close {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  color: #901c1c;
+  background: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 4.1em;
+  font-style: normal;
+  border: none;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+}
+
+.slides-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  float: left;
+  z-index: 3;
+}
+
+.slides {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.slide-media {
+  display: flex;
+  justify-content: center;
+}
+
+#title-photo {
+  font-size: 1.5em;
+  margin: 0em;  
+  padding-top: 1em;
+}
+
+#prev, #next {
+  position: absolute;
+  top: 50%;  
+  color: #901c1c;  
+  background: none;
+  font-family: "DM Sans", sans-serif;  
+  font-size: 4.1em;
+  font-weight: 200;
+  max-height: 42.5em;
+  border: none;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+}
+
+#prev {
+  left: 2em;
+}
+
+#next {
+  right: 2em;
+}
+

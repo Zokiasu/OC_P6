@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head><meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="icon" type="image/png" href="./assets/images/logo.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+  <title>Fisheye - Photographe</title>
+</head>
+
+<body>
+  <header role="banner">
+    <a href="./index.html" id="logo" aria-label="Fisheye Accueil">
+      <img src="assets/images/logo.png" role="link" class="logo" alt="Fisheye home page" />
+    </a>
+  </header>
+  
+  <main id="main" aria-hidden="false">
+
+    <!-- Header photographer detail -->
+    <section class="photographer_header"></section>
+
+    <!-- Dropdown filter -->
+    <section id="listbox">
+      <label id="listbox-label" for="trier" role="input label">Trier par</label>
+      <div class="listbox-custom">
+        <select id="listbox-container" name="select" id="selection">
+          <option value="popularite">Popularité</option>
+          <option value="date">Date</option>
+          <option value="titre">Titre</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Gallerie Media -->
+    <div class="photograph-galery"></div>
+  </main>
+  
+  <!-- Modal -->
+  <div id="modal">
+    <div class="contact-modal" role="dialog" aria-describedby="modal" aria-hidden="true" tabindex="-1">
+      <header class="header-modal">
+        <div class="contactNamePhotograph">
+          <span>Contactez-moi</span>
+          <br />
+          <div class="nameContact"></div>
+        </div>
+  
+        <img src="assets/icons/close.svg" id="close-modal" alt="Close Contact form" onclick="disableModal()" />
+      </header>
+      <form name="form" action="" id="form">
+        <div>
+          <div class="first-container">
+            <label for="contact-first-name">Prénom</label>
+            <input class="text-control" type="text" id="contact-first-name" name="contact-first-name"
+              aria-labelledby="contact-first-name" aria-required="true" required />
+            <span class="message-error-contact" aria-invalid></span>
+          </div>
+          <div class="last-container">
+            <label for="contact-last-name">Nom</label>
+            <input class="text-control" type="text" id="contact-last-name" name="contact-last-name"
+              aria-labelledby="contact-last-name" aria-required="true" required />
+            <span class="message-error-contact" aria-invalid></span>
+          </div>
+          <div class="email-container">
+            <label for="contact-email">Email</label>
+            <input class="text-control" type="email" id="contact-email" name="contact-email"
+              aria-labelledby="contact-email" aria-required="true" required />
+            <span class="message-error-contact" aria-invalid></span>
+          </div>
+          <div class="message-container">
+            <label for="contact-message">Votre message</label>
+            <input class="text-control" type="text" id="contact-message" name="contact-message"
+              aria-labelledby="contact-message" aria-required="true" required />
+            <span class="message-error-contact" aria-invalid></span>
+          </div>
+        </div>
+        <input role="button" class="contact-button" type="submit" value="Envoyer" aria-label="Send" />
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" role="dialog" aria-label="image closeup view" aria-hidden="true" tabindex="1">
+
+    <div id="lightbox-container"></div>
+    
+    <!-- Close Button -->
+    <button onclick="closeLightbox()" id="lightbox-icon-close" aria-label="Close dialog">
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+        <path
+          d="M57 19.23 52.77 15 36 31.77 19.23 15 15 19.23 31.77 36 15 52.77 19.23 57 36 40.23 52.77 57 57 52.77 40.23 36 57 19.23Z"
+          fill="#911C1C" />
+      </svg>
+    </button>
+
+    <!-- Previous Image -->
+    <button id="prev" aria-label="Previous image" role="link" tabindex="1">
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+        <path d="M61.64 66.36 43.32 48l18.32-18.36L56 24 32 48l24 24 5.64-5.64Z" fill="#911C1C" />
+      </svg>
+    </button>
+
+    <!-- Next Image -->
+    <button id="next" aria-label="Next image" role="link" tabindex="1">
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+        <path d="M34.36 29.64 52.68 48 34.36 66.36 40 72l24-24-24-24-5.64 5.64Z" fill="#911C1C" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Compteur de like -->
+  <footer class="widget"></footer>
+  
+  <script src="javascripts/pages/photographer.js"></script>
+  
+  <script src="javascripts/factories/photographerFactory.js"></script>
+  <script src="javascripts/factories/galeryfactory.js"></script>
+
+  <script src="javascripts/utils/contactForm.js"></script>
+  <script src="javascripts/utils/lightbox.js"></script>
+  <script src="javascripts/utils/likes.js"></script>
+  <script src="javascripts/utils/listbox.js"></script>
+</body>
+</html>

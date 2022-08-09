@@ -1,0 +1,64 @@
+.photograph-galery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2em 5% 2.5em 5%;
+}
+
+.photograph-galery figure {
+  cursor: pointer;
+  margin-right: 0em;
+  margin-left: 0em;
+}
+
+.photograph-galery figure:nth-child(1n) {
+  animation-delay: 0.15s;
+}
+
+.photograph-galery figure :hover {
+  transition: all 0.25s ease;
+}
+
+.photograph-galery figure img {
+  height: 19em;
+  width: 22em;
+  object-fit: cover;
+  border-radius: 0.3em;
+  object-position: center top;
+  transform: translateY(0em) scale(1);
+  transition: all 0.25s ease;
+  box-shadow: 0 0.2em 0.2em rgb(0 0 0 / 10%);
+}
+
+.photograph-galery figure img:hover {
+  transform: translateY(-0.13em) scale(1.02);
+}
+
+.photograph-galery figure video {
+  height: 19em;
+  width: 22em;
+  object-fit: cover;
+  border-radius: 0.3em;
+  object-position: center top;
+  transform: translateY(0em) scale(1);
+  transition: all 0.25s ease;
+  box-shadow: 0 0.2em 0.2em rgb(0 0 0 / 10%);
+  max-width: 100%;
+}
+
+.photograph-galery figcaption {
+  display: flex;
+  justify-content: space-between;
+  max-width: 22em;
+  white-space: nowrap;
+}
+
+.photograph-galery figure span {
+  color: #911c1c;
+  font-size: 1.4em;
+  font-weight: normal;
+  margin-bottom: 2em;
+  margin-top: 0em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
