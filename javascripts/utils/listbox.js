@@ -1,4 +1,4 @@
-const selectElt = document.querySelector("select");
+const elementSelected = document.querySelector("select");
 const listboxCustom = document.querySelector(".listbox-custom");
 
 const listboxCustomtNew = document.createElement("div");
@@ -7,7 +7,7 @@ listboxCustomtNew.setAttribute("role", "button");
 listboxCustomtNew.setAttribute("aria-haspopup", "listbox");
 listboxCustomtNew.setAttribute("aria-expanded", "");
 listboxCustomtNew.setAttribute("tabindex", 0);
-listboxCustomtNew.innerHTML = selectElt.options[selectElt.selectedIndex].innerHTML;
+listboxCustomtNew.innerHTML = elementSelected.options[elementSelected.selectedIndex].innerHTML;
 listboxCustom.appendChild(listboxCustomtNew);
 
 const newMenu = document.createElement("div");
@@ -17,39 +17,41 @@ newMenu.setAttribute("aria-haspopup", "listbox");
 newMenu.setAttribute("aria-expanded", "true");
 newMenu.setAttribute("tabindex", "0");
 
-for (let option of selectElt.options) {
+for (let option of elementSelected.options) {
   const newOption = document.createElement("div");
+
   newOption.setAttribute("role", "listbox");
-  newOption.setAttribute("aria-activedescendant", "trier");
+  newOption.setAttribute("aria-activedescendant", "sort");
   newOption.setAttribute("aria-labelledby", "listbox-select-items");
   newOption.setAttribute("tabindex", "0");
+
   newOption.innerHTML = option.innerHTML;
 
-    newOption.addEventListener("click", function () {
-    const changeOption = () => {
-      for (let option of selectElt.options) {
+  newOption.addEventListener("click", function () {
+    const updateSorting = () => {
+      for (let option of elementSelected.options) {
         if (option.innerHTML === this.innerHTML) {
-          selectElt.selectedIndex = option.index;
+          elementSelected.selectedIndex = option.index;
           listboxCustomtNew.innerHTML = this.innerHTML;
         }
       }
       listboxCustomtNew.click();
     };
-    changeOption();
+    updateSorting();
   });
 
     newOption.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-      const changeOption = () => {
-        for (let option of selectElt.options) {
+      const updateSorting = () => {
+        for (let option of elementSelected.options) {
           if (option.innerHTML === this.innerHTML) {
-            selectElt.selectedIndex = option.index;
+            elementSelected.selectedIndex = option.index;
             listboxCustomtNew.innerHTML = this.innerHTML;
           }
         }
         listboxCustomtNew.click();
       };
-      changeOption();
+      updateSorting();
     }
   });
 
